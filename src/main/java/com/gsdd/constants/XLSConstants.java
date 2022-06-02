@@ -1,9 +1,8 @@
 package com.gsdd.constants;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@UtilityClass
 public final class XLSConstants {
 
   public static final String EXT_XLS = ".xls";

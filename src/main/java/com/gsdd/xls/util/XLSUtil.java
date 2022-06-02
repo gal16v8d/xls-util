@@ -1,17 +1,16 @@
 package com.gsdd.xls.util;
 
+import com.gsdd.constants.XLSConstants;
 import java.io.FileInputStream;
 import java.io.IOException;
+import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import com.gsdd.constants.XLSConstants;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@UtilityClass
 public final class XLSUtil {
 
   /**
