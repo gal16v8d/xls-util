@@ -42,8 +42,8 @@
 		<lombok.version>1.18.24</lombok.version>
 		<slf4j.api.version>1.7.36</slf4j.api.version>
 		<poi.version>3.17</poi.version>
-		<junit.version>5.9.0</junit.version>
-		<mockito.version>4.7.0</mockito.version>
+		<junit.version>5.9.1</junit.version>
+		<mockito.version>4.10.0</mockito.version>
 		<constant-util.version>2.0.1</constant-util.version>
 	</properties>
 
