@@ -1,6 +1,6 @@
 package com.gsdd.xls.util;
 
-import com.gsdd.constants.XLSConstants;
+import com.gsdd.constants.XlsConstants;
 import java.io.FileInputStream;
 import java.io.IOException;
 import lombok.experimental.UtilityClass;
@@ -11,11 +11,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 @Slf4j
 @UtilityClass
-public final class XLSUtil {
+public final class XlsUtil {
 
   /**
    * Get a workbook by extension.
-   * 
+   *
    * @param is
    * @param excelFilePath output path
    * @param errorMsg message to show if is not a valid extension.
@@ -24,9 +24,9 @@ public final class XLSUtil {
   public static Workbook getWorkbook(FileInputStream is, String excelFilePath, String errorMsg) {
     Workbook workbook = null;
     try {
-      if (excelFilePath.endsWith(XLSConstants.EXT_XLSX)) {
+      if (excelFilePath.endsWith(XlsConstants.EXT_XLSX)) {
         workbook = (is != null ? new XSSFWorkbook(is) : new XSSFWorkbook());
-      } else if (excelFilePath.endsWith(XLSConstants.EXT_XLS)) {
+      } else if (excelFilePath.endsWith(XlsConstants.EXT_XLS)) {
         workbook = (is != null ? new HSSFWorkbook(is) : new HSSFWorkbook());
       } else {
         throw new IllegalArgumentException(errorMsg);

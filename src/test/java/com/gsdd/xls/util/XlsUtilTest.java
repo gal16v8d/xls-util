@@ -11,7 +11,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-class XLSUtilTest {
+class XlsUtilTest {
 
   private static final String TEST_XLS = "test.xls";
   private static final String TEST_XLSX = "test.xlsx";
@@ -19,15 +19,16 @@ class XLSUtilTest {
 
   @Test
   void testGetWorkbookWrongExt(@Mock FileInputStream stream) {
-    Assertions.assertThrows(IllegalArgumentException.class,
-        () -> XLSUtil.getWorkbook(stream, "xls.xlst", ERROR));
+    Assertions.assertThrows(
+        IllegalArgumentException.class, () -> XlsUtil.getWorkbook(stream, "xls.xlst", ERROR));
   }
 
   @Test
   void testGetWorkbookIsXLSX() {
     try (FileInputStream stream =
-        (FileInputStream) XLSUtilTest.class.getResourceAsStream(TEST_XLSX)) {
-      Assertions.assertTrue(XLSUtil.getWorkbook(stream, TEST_XLSX, ERROR) instanceof XSSFWorkbook);
+        (FileInputStream) XlsUtilTest.class.getResourceAsStream(TEST_XLSX)) {
+      Assertions.assertInstanceOf(
+          XSSFWorkbook.class, XlsUtil.getWorkbook(stream, TEST_XLSX, ERROR));
     } catch (IOException e) {
       Assertions.fail(ERROR);
     }
@@ -36,11 +37,10 @@ class XLSUtilTest {
   @Test
   void testGetWorkbookIsXLS() {
     try (FileInputStream stream =
-        (FileInputStream) XLSUtilTest.class.getResourceAsStream(TEST_XLS)) {
-      Assertions.assertTrue(XLSUtil.getWorkbook(stream, TEST_XLS, ERROR) instanceof HSSFWorkbook);
+        (FileInputStream) XlsUtilTest.class.getResourceAsStream(TEST_XLS)) {
+      Assertions.assertInstanceOf(HSSFWorkbook.class, XlsUtil.getWorkbook(stream, TEST_XLS, ERROR));
     } catch (IOException e) {
       Assertions.fail(ERROR);
     }
-
   }
 }
