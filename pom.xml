@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>com.gsdd</groupId>
 		<artifactId>gsdd-parent</artifactId>
-		<version>1.0.6</version>
+		<version>1.0.8</version>
 	</parent>
 
 	<artifactId>xls-util</artifactId>
-	<version>2.2.2</version>
+	<version>3.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>xls-util</name>
@@ -23,9 +23,11 @@
 		<skip.unit.tests>false</skip.unit.tests>
 		<!-- If true skips IT test execution -->
 		<skip.integration.tests>false</skip.integration.tests>
+		<!--Plugin is rate limited by NVD, so we can skip it in some cases-->
+		<dependency-check.skip>true</dependency-check.skip>
 
 		<poi.version>5.5.1</poi.version>
-		<constant-util.version>2.2.2</constant-util.version>
+		<constant-util.version>3.0.1</constant-util.version>
 	</properties>
 
 	<dependencies>
@@ -56,6 +58,19 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
 		</dependency>
 
 		<dependency>
